@@ -9,6 +9,7 @@
 #define XBOX        "Xbox 360 Controller"
 #define PS3         "Sony PLAYSTATION(R)3 Controller"
 #define NINTENDO    "Nintendo Co., Ltd. Pro Controller"
+#define SHANWAN     "SHANWAN PS3/PC Gamepad"
 
 #define SHOOTING_COOLDOWN 5
 #define BULLET_DURATION   15
@@ -87,7 +88,7 @@ void player_init(Player *p, int id)
     p->hitbox = (Rectangle){ 0.0f, 0.0f, 64.0f, 64.0f };
     p->shot_bullet = 0;
 
-    if (TextIsEqual(GetGamepadName(p->id), XBOX_LEGACY) || TextIsEqual(GetGamepadName(p->id), XBOX) || TextIsEqual(GetGamepadName(p->id), PS3))
+    if (TextIsEqual(GetGamepadName(p->id), XBOX_LEGACY) || TextIsEqual(GetGamepadName(p->id), XBOX) || TextIsEqual(GetGamepadName(p->id), PS3) || TextIsEqual(GetGamepadName(p->id), SHANWAN))
         p->shoot_button = GAMEPAD_BUTTON_RIGHT_FACE_DOWN;
     else if (TextIsEqual(GetGamepadName(p->id), NINTENDO))
         p->shoot_button = GAMEPAD_BUTTON_RIGHT_FACE_RIGHT;
